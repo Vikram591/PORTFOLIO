@@ -19,10 +19,10 @@ Here you’ll find:
 - Projects I’ve built, with descriptions and links  
 - My skills, education, and contact information  
 
-### 🎓 Education  
+###  Education  
 Bachelor of Science in Computer Science  
 [YMLR INSTITUTE OF TECHNOLOGY], [HYDERABAD], [2025]
 
 ###  Contact  
-- Email: [vikramvikky7832@gmail.com  
+- Email: vikramvikky7832@gmail.com  
 
