@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Dark Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Dark futuristic theme */
+    --background: 220 15% 6%;
+    --foreground: 210 40% 95%;
+    
+    /* Card system */
+    --card: 220 15% 8%;
+    --card-foreground: 210 40% 95%;
+    
+    /* Neon accent colors */
+    --neon-blue: 196 100% 60%;
+    --neon-purple: 270 100% 70%;
+    --neon-cyan: 180 100% 60%;
+    
+    /* Primary system with neon blue */
+    --primary: 196 100% 60%;
+    --primary-foreground: 220 15% 6%;
+    
+    /* Secondary system */
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 210 40% 95%;
+    
+    /* Muted system */
+    --muted: 220 15% 10%;
+    --muted-foreground: 210 20% 70%;
+    
+    /* Accent with neon purple */
+    --accent: 270 100% 70%;
+    --accent-foreground: 220 15% 6%;
+    
+    /* Borders and inputs */
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 196 100% 60%;
+    
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 15% 10%));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(220 15% 4%));
+    
+    /* Shadows and glows */
+    --glow-neon: 0 0 20px hsl(var(--neon-blue) / 0.5);
+    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5);
+    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+    --shadow-card: 0 10px 30px -10px hsl(220 15% 3% / 0.8);
+    
+    /* Animation speeds */
+    --transition-fast: 0.2s ease-out;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--neon-blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%);
+  }
+  
+  /* Typography */
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Neon glow effects */
+  .glow-neon {
+    box-shadow: var(--glow-neon);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  /* Hero text effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--neon-blue) / 0.8);
+  }
+  
+  /* Animated gradients */
+  .gradient-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: all var(--transition-smooth);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .card-hover:hover {
+    border-color: hsl(var(--neon-blue) / 0.5);
+    box-shadow: var(--glow-neon), var(--shadow-card);
+    transform: translateY(-4px);
+  }
+  
+  /* Button styles */
+  .btn-neon {
+    background: transparent;
+    border: 2px solid hsl(var(--neon-blue));
+    color: hsl(var(--neon-blue));
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-neon:hover {
+    background: hsl(var(--neon-blue) / 0.1);
+    box-shadow: var(--glow-neon);
+    color: hsl(var(--foreground));
+  }
+  
+  .btn-neon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--neon-blue) / 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-neon:hover::before {
+    left: 100%;
+  }
+  
+  /* Pulse animation for active elements */
+  .pulse-neon {
+    animation: pulse-neon 2s infinite;
+  }
+  
+  /* Typing effect */
+  .typing-effect {
+    border-right: 2px solid hsl(var(--neon-blue));
+    animation: blink 1s infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes pulse-neon {
+    0%, 100% { box-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5); }
+    50% { box-shadow: 0 0 30px hsl(var(--neon-blue) / 0.8); }
+  }
+  
+  @keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: hsl(var(--neon-blue)); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes glow-rotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
