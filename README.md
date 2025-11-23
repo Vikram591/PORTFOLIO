@@ -21,7 +21,7 @@ Here you’ll find:
 
 ###  Education  
 Bachelor of Science in Computer Science  
-[YMLR INSTITUTE OF TECHNOLOGY], [HYDERABAD], [2025]
+MLR Institute of Technology, Hyderabad, 2025
 
 ###  Contact  
 - Email: vikramvikky7832@gmail.com  
